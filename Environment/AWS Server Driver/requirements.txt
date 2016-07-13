@@ -1,0 +1,5 @@
+cloudshell-shell-core>=2.0.0
+cloudshell-automation-api
+boto3
+cloudshell-cp-vcenter>=1.0.0,<1.1.0
+cloudshell-core

@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DataModelInfo xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.qualisystems.com/ResourceManagement/DataModelSchema.xsd">
+  <Attributes>
+    <AttributeInfo xsi:type="LookupAttributeDetails" Name="ExecutionServer" Type="Lookup" DefaultValue="Sandbox" IsReadOnly="false">
+      <Rules>
+        <Rule Name="Configuration" />
+        <Rule Name="Execution Server Selector" />
+        <Rule Name="Admin Only" />
+      </Rules>
+      <LookupValues>
+        <LookupValue NumericValue="0" StringValue="Production" />
+        <LookupValue NumericValue="1" StringValue="Sandbox" />
+      </LookupValues>
+    </AttributeInfo>
+    <AttributeInfo xsi:type="LookupAttributeDetails" Name="Lab" Type="Lookup" DefaultValue="Global"
+                   Description="Name of the Lab (=demo) associated with the resource" IsReadOnly="false">
+      <Rules>
+        <Rule Name="Configuration" />
+        <Rule Name="Available For Abstract Resources" />
+        <Rule Name="Displayed In Search Filters" />
+      </Rules>
+      <LookupValues>
+        <LookupValue NumericValue="0" StringValue="MSO" />
+        <LookupValue NumericValue="1" StringValue="Virtual Lab" />
+        <LookupValue NumericValue="2" StringValue="Cyber Range" />
+        <LookupValue NumericValue="3" StringValue="Training" />
+        <LookupValue NumericValue="4" StringValue="Continous Integration" />
+        <LookupValue NumericValue="5" StringValue="Physical Infrastructure" />
+        <LookupValue NumericValue="6" StringValue="Global" />
+        <LookupValue NumericValue="7" StringValue="CloudShell Latest" />
+        <LookupValue NumericValue="9" StringValue="Resource" />
+      </LookupValues>
+    </AttributeInfo>
+    <AttributeInfo xsi:type="LookupAttributeDetails" Name="Device Model" Type="Lookup" DefaultValue="Samsung Galaxy S3 (Sprint) - ANDROID 4.4.2"
+                   Description="Select the phone hardware to be reserved in AWS Device Farm" IsReadOnly="false">
+      <Rules>
+        <Rule Name="Configuration" />
+        <Rule Name="Setting" />
+        <Rule Name="Available For Abstract Resources" />
+        <Rule Name="Displayed In Search Filters" />
+      </Rules>
+      <LookupValues>
+        <LookupValue NumericValue="0" StringValue="" />
+        <LookupValue NumericValue="1" StringValue="Samsung Galaxy Note 4 (AT&amp;T) - ANDROID 5.0.1" />
+        <LookupValue NumericValue="2" StringValue="LG G2 (AT&amp;T) - ANDROID 4.4.2" />
+        <LookupValue NumericValue="3" StringValue="Samsung Galaxy Tab 3 10.1&quot; (WiFi) - ANDROID 4.2.2" />
+        <LookupValue NumericValue="4" StringValue="Samsung Galaxy S3 (T-Mobile) - ANDROID 4.3" />
+        <LookupValue NumericValue="5" StringValue="HTC One M8 (AT&amp;T) - ANDROID 4.4.4" />
+        <LookupValue NumericValue="6" StringValue="Samsung Galaxy Tab 4 10.1&quot; (WiFi) - ANDROID 4.4.2" />
+        <LookupValue NumericValue="7" StringValue="Amazon Kindle Fire HDX 7 (2013) - ANDROID 4.4.3" />
+        <LookupValue NumericValue="8" StringValue="Samsung Galaxy S4 (T-Mobile) - ANDROID 4.4.4" />
+        <LookupValue NumericValue="9" StringValue="Samsung Galaxy Note 3 (AT&amp;T) - ANDROID 4.4.2" />
+        <LookupValue NumericValue="10" StringValue="LG G3 (Sprint) - ANDROID 5.0.1" />
+        <LookupValue NumericValue="11" StringValue="Samsung Galaxy S3 LTE (T-Mobile) - ANDROID 4.3" />
+        <LookupValue NumericValue="12" StringValue="Samsung Galaxy S5 (Sprint) - ANDROID 4.4.4" />
+        <LookupValue NumericValue="13" StringValue="Samsung Galaxy S5 (AT&amp;T) - ANDROID 4.4.4" />
+        <LookupValue NumericValue="14" StringValue="Samsung Galaxy S4 (AT&amp;T) - ANDROID 4.4.2" />
+        <LookupValue NumericValue="15" StringValue="Samsung Galaxy S6 (Verizon) - ANDROID 5.0.2" />
+        <LookupValue NumericValue="16" StringValue="Samsung Galaxy S5 (AT&amp;T) - ANDROID 4.4.2" />
+        <LookupValue NumericValue="17" StringValue="Samsung Galaxy S4 (Verizon) - ANDROID 4.4.2" />
+        <LookupValue NumericValue="18" StringValue="Samsung Galaxy S3 (Sprint) - ANDROID 4.4.2" />
+      </LookupValues>
+    </AttributeInfo>
+    <AttributeInfo Name="AWSRemoteDeviceEndpoint" Type="String" DefaultValue="" IsReadOnly="false">
+      <Rules>
+        <Rule Name="Configuration" />
+        <Rule Name="Setting" />
+      </Rules>
+    </AttributeInfo>
+    <AttributeInfo Name="AWSDeviceFarmSessionARN" Type="String" DefaultValue="" IsReadOnly="false">
+      <Rules>
+        <Rule Name="Configuration" />
+        <Rule Name="Setting" />
+      </Rules>
+    </AttributeInfo>
+    <AttributeInfo Name="AWSRemoteDeviceEndpoint2" Type="String" DefaultValue="" IsReadOnly="false">
+      <Rules>
+        <Rule Name="Configuration" />
+        <Rule Name="Setting" />
+      </Rules>
+    </AttributeInfo>
+    <AttributeInfo Name="APK URL" Type="String" DefaultValue="" IsReadOnly="false">
+      <Rules>
+        <Rule Name="Configuration" />
+        <Rule Name="Setting" />
+      </Rules>
+    </AttributeInfo>
+    <AttributeInfo Name="APK Asset Updates" Type="String" DefaultValue="{}" IsReadOnly="false"
+                   Description="APK text file assets to be inserted into the APK before upload to the phone. JSON dictionary: key=relative path within the APK (e.g. assets/myfile.txt), value=file contents">
+      <Rules>
+        <Rule Name="Configuration" />
+        <Rule Name="Setting" />
+      </Rules>
+    </AttributeInfo>
+    <AttributeInfo Name="AWS AMI Id" Type="String" DefaultValue="" IsReadOnly="false">
+      <Rules>
+        <Rule Name="Configuration" />
+        <Rule Name="Setting" />
+      </Rules>
+    </AttributeInfo>
+    <AttributeInfo Name="AWS EC2" Type="String" DefaultValue="" IsReadOnly="false">
+      <Rules>
+        <Rule Name="Configuration" />
+        <Rule Name="Setting" />
+      </Rules>
+    </AttributeInfo>
+    <AttributeInfo Name="Inbound Ports" Type="String" DefaultValue="" IsReadOnly="false">
+      <Rules>
+        <Rule Name="Configuration" />
+        <Rule Name="Setting" />
+      </Rules>
+    </AttributeInfo>
+    <AttributeInfo Name="Instance Type" Type="String" DefaultValue="" IsReadOnly="false">
+      <Rules>
+        <Rule Name="Configuration" />
+        <Rule Name="Setting" />
+      </Rules>
+    </AttributeInfo>
+    <AttributeInfo Name="Outbound Ports" Type="String" DefaultValue="" IsReadOnly="false">
+      <Rules>
+        <Rule Name="Configuration" />
+        <Rule Name="Setting" />
+      </Rules>
+    </AttributeInfo>
+    <AttributeInfo Name="AWS default subnet" Type="String" DefaultValue="" IsReadOnly="false">
+      <Rules>
+        <Rule Name="Configuration" />
+      </Rules>
+    </AttributeInfo>
+    <AttributeInfo Name="AWS default KeyPair" Type="String" DefaultValue="" IsReadOnly="false">
+      <Rules>
+        <Rule Name="Configuration" />
+      </Rules>
+    </AttributeInfo>
+    <AttributeInfo Name="AWS default security group" Type="String" DefaultValue="" IsReadOnly="false">
+      <Rules>
+        <Rule Name="Configuration" />
+      </Rules>
+    </AttributeInfo>
+    <AttributeInfo Name="Access Key" Type="String" DefaultValue="" Description="AWS Access Key" IsReadOnly="false">
+      <Rules>
+        <Rule Name="Configuration" />
+      </Rules>
+    </AttributeInfo>
+    <AttributeInfo xsi:type="LookupAttributeDetails" Name="Instance Region" Type="Lookup" DefaultValue="us-east-1" IsReadOnly="false">
+      <Rules>
+        <Rule Name="Configuration" />
+      </Rules>
+      <LookupValues>
+        <LookupValue NumericValue="0" StringValue="us-east-1" />
+        <LookupValue NumericValue="1" StringValue="us-west-1" />
+        <LookupValue NumericValue="2" StringValue="us-west-2" />
+      </LookupValues>
+    </AttributeInfo>
+    <AttributeInfo Name="Secret Access Key" Type="Password" DefaultValue="3M3u7nkDzxWb0aJ/IZYeWw==" Description="AWS Secret Access Key" IsReadOnly="false">
+      <Rules>
+        <Rule Name="Configuration" />
+      </Rules>
+    </AttributeInfo>
+  </Attributes>
+  <ResourceFamilies>
+    <ResourceFamily Name="Generic App Family" IsConnectable="true" Description="" IsSearchable="true" ResourceType="Application">
+      <AttachedAttributes />
+      <AttributeValues />
+      <Models>
+        <ResourceModel Name="Generic App Model" Description="" SupportsConcurrentCommands="false">
+          <AttachedAttributes/>
+          <AttributeValues/>
+          <ParentModels />
+          <Drivers />
+          <Scripts />
+        </ResourceModel>
+        <ResourceModel Name="AWS Device Farm App Model" Description="" SupportsConcurrentCommands="false">
+          <AttachedAttributes>
+            <AttachedAttribute Name="AWSRemoteDeviceEndpoint" IsOverridable="true" IsLocal="true">
+              <AllowedValues />
+            </AttachedAttribute>
+            <AttachedAttribute Name="AWSDeviceFarmSessionARN" IsOverridable="true" IsLocal="true">
+              <AllowedValues />
+            </AttachedAttribute>
+            <AttachedAttribute Name="AWSRemoteDeviceEndpoint2" IsOverridable="true" IsLocal="true">
+              <AllowedValues />
+            </AttachedAttribute>
+          </AttachedAttributes>
+          <AttributeValues>
+            <AttributeValue Name="AWSRemoteDeviceEndpoint" Value="" />
+            <AttributeValue Name="AWSDeviceFarmSessionARN" Value="" />
+            <AttributeValue Name="AWSRemoteDeviceEndpoint2" Value="" />
+          </AttributeValues>
+          <ParentModels />
+          <Drivers />
+          <Scripts />
+        </ResourceModel>
+      </Models>
+      <Categories />
+    </ResourceFamily>
+    <ResourceFamily Name="Deployment Options" Description="" IsService="true" ServiceType="Deployment">
+      <AttachedAttributes />
+      <AttributeValues />
+      <Models>
+        <ResourceModel Name="AWS Mobile Device" Description="" SupportsConcurrentCommands="false">
+          <AttachedAttributes>
+            <AttachedAttribute Name="AWS EC2" IsOverridable="true" IsLocal="true" UserInput="true">
+              <AllowedValues />
+            </AttachedAttribute>
+            <AttachedAttribute Name="Inbound Ports" IsOverridable="true" IsLocal="true" UserInput="true">
+              <AllowedValues />
+            </AttachedAttribute>
+            <AttachedAttribute Name="Outbound Ports" IsOverridable="true" IsLocal="true" UserInput="true">
+              <AllowedValues />
+            </AttachedAttribute>
+            <AttachedAttribute Name="Device Model" IsOverridable="true" IsLocal="true" UserInput="true">
+              <AllowedValues />
+            </AttachedAttribute>
+          </AttachedAttributes>
+          <AttributeValues>
+            <AttributeValue Name="AWS EC2" Value="AWS us-west-2" />
+            <AttributeValue Name="Inbound Ports" Value="" />
+            <AttributeValue Name="Outbound Ports" Value="" />
+            <AttributeValue Name="Device Model" Value="Samsung Galaxy S3 (Sprint) - ANDROID 4.4.2" />
+          </AttributeValues>
+          <ParentModels />
+          <Drivers>
+            <DriverName>AWS EC2 Instance</DriverName>
+          </Drivers>
+          <Scripts />
+        </ResourceModel>
+      </Models>
+      <Categories>
+        <Category>Admin-Services</Category>
+      </Categories>
+    </ResourceFamily>
+    <ResourceFamily Name="Installation Options" Description="" IsService="true" ServiceType="Installation">
+      <AttachedAttributes />
+      <AttributeValues />
+      <Models>
+        <ResourceModel Name="AWS Mobile Device Installation" Description="" SupportsConcurrentCommands="false">
+          <AttachedAttributes>
+            <AttachedAttribute Name="AWS EC2" IsOverridable="true" IsLocal="true" UserInput="true">
+              <AllowedValues />
+            </AttachedAttribute>
+            <AttachedAttribute Name="APK URL" IsOverridable="true" IsLocal="true" UserInput="true">
+              <AllowedValues />
+            </AttachedAttribute>
+            <AttachedAttribute Name="APK Asset Updates" IsOverridable="true" IsLocal="true" UserInput="true">
+              <AllowedValues />
+            </AttachedAttribute>
+          </AttachedAttributes>
+          <AttributeValues>
+            <AttributeValue Name="AWS EC2" Value="AWS us-west-2" />
+            <AttributeValue Name="APK URL" Value="" />
+            <AttributeValue Name="APK Asset Updates" Value="" />
+          </AttributeValues>
+          <ParentModels />
+          <Drivers>
+            <DriverName>AWS Device Farm Installation</DriverName>
+          </Drivers>
+          <Scripts>
+            <ScriptName>install_device_farm_app</ScriptName>
+          </Scripts>
+        </ResourceModel>
+      </Models>
+      <Categories>
+        <Category>Admin-Services</Category>
+      </Categories>
+    </ResourceFamily>
+    <ResourceFamily Name="Apps Orchestration" Description="" IsService="true" ServiceType="Orchestration">
+      <AttachedAttributes />
+      <AttributeValues />
+      <Models>
+        <ResourceModel Name="Simple" Description="" SupportsConcurrentCommands="false">
+          <AttachedAttributes />
+          <AttributeValues />
+          <ParentModels />
+          <Drivers>
+            <DriverName>Deployment Orchestrator</DriverName>
+          </Drivers>
+          <Scripts />
+        </ResourceModel>
+      </Models>
+      <Categories />
+    </ResourceFamily>
+    <ResourceFamily Name="Generic Port" IsConnectable="true" Description="Family for sub-resources of type &quot;Port&quot;" ResourceType="Resource">
+      <AttachedAttributes>
+        <AttachedAttribute Name="ExecutionServer" IsOverridable="true" IsLocal="true">
+          <AllowedValues />
+        </AttachedAttribute>
+      </AttachedAttributes>
+      <AttributeValues>
+        <AttributeValue Name="ExecutionServer" Value="Production" />
+      </AttributeValues>
+      <Models>
+        <ResourceModel Name="Virtual Power Port" Description="" SupportsConcurrentCommands="false">
+          <AttachedAttributes />
+          <AttributeValues>
+            <AttributeValue Name="ExecutionServer" Value="Production" />
+          </AttributeValues>
+          <ParentModels>
+            <ParentModelName>AWS Regional Server</ParentModelName>
+          </ParentModels>
+          <Drivers />
+          <Scripts />
+        </ResourceModel>
+      </Models>
+      <Categories />
+    </ResourceFamily>
+    <ResourceFamily Name="AWS Server" Description="" IsPowerSwitch="true" IsSearchable="true" ResourceType="Resource">
+      <AttachedAttributes>
+        <AttachedAttribute Name="Lab" IsOverridable="true" IsLocal="true">
+          <AllowedValues />
+        </AttachedAttribute>
+      </AttachedAttributes>
+      <AttributeValues>
+        <AttributeValue Name="Lab" Value="Global" />
+      </AttributeValues>
+      <Models>
+        <ResourceModel Name="AWS Regional Server" Description="" SupportsConcurrentCommands="false">
+          <AttachedAttributes>
+            <AttachedAttribute Name="AWS default subnet" IsOverridable="true" IsLocal="true">
+              <AllowedValues />
+            </AttachedAttribute>
+            <AttachedAttribute Name="AWS default KeyPair" IsOverridable="true" IsLocal="true">
+              <AllowedValues />
+            </AttachedAttribute>
+            <AttachedAttribute Name="AWS default security group" IsOverridable="true" IsLocal="true">
+              <AllowedValues />
+            </AttachedAttribute>
+            <AttachedAttribute Name="Access Key" IsOverridable="true" IsLocal="true">
+              <AllowedValues />
+            </AttachedAttribute>
+            <AttachedAttribute Name="Instance Region" IsOverridable="true" IsLocal="true">
+              <AllowedValues />
+            </AttachedAttribute>
+            <AttachedAttribute Name="Secret Access Key" IsOverridable="true" IsLocal="true">
+              <AllowedValues />
+            </AttachedAttribute>
+          </AttachedAttributes>
+          <AttributeValues>
+            <AttributeValue Name="AWS default subnet" Value="" />
+            <AttributeValue Name="AWS default KeyPair" Value="" />
+            <AttributeValue Name="AWS default security group" Value="" />
+            <AttributeValue Name="Access Key" Value="" />
+            <AttributeValue Name="Instance Region" Value="us-east-1" />
+            <AttributeValue Name="Secret Access Key" Value="3M3u7nkDzxWb0aJ/IZYeWw==" />
+            <AttributeValue Name="Lab" Value="Global" />
+          </AttributeValues>
+          <ParentModels />
+          <Drivers>
+            <DriverName>AWS Server Driver</DriverName>
+          </Drivers>
+          <Scripts />
+        </ResourceModel>
+      </Models>
+      <Categories />
+    </ResourceFamily>
+  </ResourceFamilies>
+  <DriverDescriptors>
+    <DriverDescriptor Name="Deployment Orchestrator" Description="Deploy App" DriverType="PythonDriver" />
+    <DriverDescriptor Name="AWS Server Driver" Description="This is a sample driver" DriverType="PythonDriver" />
+    <DriverDescriptor Name="AWS EC2 Instance" Description="Start AWS Device Farm Session" DriverType="PythonDriver" />
+    <DriverDescriptor Name="AWS Device Farm Installation" Description="Install apk on AWS Device Farm" DriverType="PythonDriver" />
+  </DriverDescriptors>
+  <ScriptDescriptors>
+    <ScriptDescriptor Name="install_device_farm_app" Alias="install_device_farm_app">
+      <ScriptInputs />
+    </ScriptDescriptor>
+  </ScriptDescriptors>
+</DataModelInfo>

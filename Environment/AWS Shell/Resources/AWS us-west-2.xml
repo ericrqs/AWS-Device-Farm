@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ResourceInfo xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="AWS us-west-2" FolderFullPath="Physical Layer" Address="us-west-2" ModelName="AWS Regional Server" Driver="AWS Server Driver" xmlns="http://schemas.qualisystems.com/ResourceManagement/ResourceSchema.xsd">
+  <Attributes>
+    <Attribute Name="Lab" Value="Global" />
+    <Attribute Name="AWS default subnet" Value="subnet-b2f3c3d7" />
+    <Attribute Name="AWS default KeyPair" Value="ProdKeyPair" />
+    <Attribute Name="AWS default security group" Value="sg-5c2bcf3b" />
+    <Attribute Name="Access Key" Value="REPLACE_ME" />
+    <Attribute Name="Instance Region" Value="us-west-2" />
+    <Attribute Name="Secret Access Key" Value="REPLACE_ME" />
+  </Attributes>
+  <ChildResources>
+    <ResourceInfo Name="Instance-3" Address="NA" ModelName="Virtual Power Port">
+      <Attributes>
+        <Attribute Name="ExecutionServer" Value="Production" />
+      </Attributes>
+      <ChildResources />
+      <Connections />
+    </ResourceInfo>
+    <ResourceInfo Name="Instance-8" Address="NA" ModelName="Virtual Power Port">
+      <Attributes>
+        <Attribute Name="ExecutionServer" Value="Production" />
+      </Attributes>
+      <ChildResources />
+      <Connections />
+    </ResourceInfo>
+    <ResourceInfo Name="Instance-5" Address="NA" ModelName="Virtual Power Port">
+      <Attributes>
+        <Attribute Name="ExecutionServer" Value="Production" />
+      </Attributes>
+      <ChildResources />
+      <Connections />
+    </ResourceInfo>
+    <ResourceInfo Name="Instance-9" Address="NA" ModelName="Virtual Power Port">
+      <Attributes>
+        <Attribute Name="ExecutionServer" Value="Production" />
+      </Attributes>
+      <ChildResources />
+      <Connections />
+    </ResourceInfo>
+    <ResourceInfo Name="Instance-2" Address="NA" ModelName="Virtual Power Port">
+      <Attributes>
+        <Attribute Name="ExecutionServer" Value="Production" />
+      </Attributes>
+      <ChildResources />
+      <Connections />
+    </ResourceInfo>
+    <ResourceInfo Name="Instance-7" Address="NA" ModelName="Virtual Power Port">
+      <Attributes>
+        <Attribute Name="ExecutionServer" Value="Production" />
+      </Attributes>
+      <ChildResources />
+      <Connections />
+    </ResourceInfo>
+    <ResourceInfo Name="Instance-6" Address="NA" ModelName="Virtual Power Port">
+      <Attributes>
+        <Attribute Name="ExecutionServer" Value="Production" />
+      </Attributes>
+      <ChildResources />
+      <Connections />
+    </ResourceInfo>
+    <ResourceInfo Name="Instance-1" Address="1" ModelName="Virtual Power Port">
+      <Attributes>
+        <Attribute Name="ExecutionServer" Value="Production" />
+      </Attributes>
+      <ChildResources />
+      <Connections />
+    </ResourceInfo>
+    <ResourceInfo Name="Instance-10" Address="NA" ModelName="Virtual Power Port">
+      <Attributes>
+        <Attribute Name="ExecutionServer" Value="Production" />
+      </Attributes>
+      <ChildResources />
+      <Connections />
+    </ResourceInfo>
+    <ResourceInfo Name="Instance-4" Address="NA" ModelName="Virtual Power Port">
+      <Attributes>
+        <Attribute Name="ExecutionServer" Value="Production" />
+      </Attributes>
+      <ChildResources />
+      <Connections />
+    </ResourceInfo>
+  </ChildResources>
+  <Connections />
+</ResourceInfo>

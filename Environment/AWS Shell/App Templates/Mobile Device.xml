@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AppTemplateInfo xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <AppResourceInfo Name="Mobile Device">
+    <AppResources>
+      <AppResource ModelName="AWS Device Farm App Model" Driver="">
+        <Attributes>
+          <Attribute Name="AWSDeviceFarmSessionARN" Value="" />
+          <Attribute Name="AWSRemoteDeviceEndpoint" Value="" />
+          <Attribute Name="AWSRemoteDeviceEndpoint2" Value="" />
+        </Attributes>
+      </AppResource>
+    </AppResources>
+    <DeploymentPaths>
+      <DeploymentPath Name="AWS Mobile Device + AWS Mobile Device Installation" Default="true">
+        <DeploymentService Name="AWS Mobile Device">
+          <Attributes>
+            <Attribute Name="AWS EC2" Value="AWS us-west-2" />
+            <Attribute Name="Inbound Ports" Value="" />
+            <Attribute Name="Outbound Ports" Value="" />
+            <Attribute Name="Device Model" Value="Samsung Galaxy S3 (Sprint) - ANDROID 4.4.2" />
+          </Attributes>
+        </DeploymentService>
+        <InstallationService Name="AWS Mobile Device Installation">
+          <Attributes>
+            <Attribute Name="AWS EC2" Value="AWS us-west-2" />
+            <Attribute Name="APK URL" Value="https://github.com/ericrqs/testapk/raw/master/app-debug.apk" />
+            <Attribute Name="APK Asset Updates" Value="{&quot;assets/backend_url.txt&quot;:&quot;http://52.36.49.14&quot;}" />
+          </Attributes>
+          <Commands>
+            <Command Name="install_device_farm_app" CommandType="Script">
+              <CommandParameters />
+            </Command>
+          </Commands>
+        </InstallationService>
+      </DeploymentPath>
+    </DeploymentPaths>
+  </AppResourceInfo>
+  <Categories>
+    <Category>Applications</Category>
+  </Categories>
+</AppTemplateInfo>
