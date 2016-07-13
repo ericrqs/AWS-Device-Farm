@@ -1,0 +1,45 @@
+<ServerUniversalSettings xmlns="http://schemas.qualisystems.com/ServerUniversalSettings.xsd">
+  <ResourcesLiveStatus>
+    <key name="Online">C:\ProgramData\QualiSystems\Portal\Content\Images\online.png</key>
+    <key name="Offline">C:\ProgramData\QualiSystems\Portal\Content\Images\offline.png</key>
+    <key name="Error">C:\ProgramData\QualiSystems\Portal\Content\Images\error.png</key>
+    <key name="Progress 0">C:\ProgramData\QualiSystems\Portal\Content\Images\progress0.png</key>
+    <key name="Progress 10">C:\ProgramData\QualiSystems\Portal\Content\Images\progress10.png</key>
+    <key name="Progress 20">C:\ProgramData\QualiSystems\Portal\Content\Images\progress20.png</key>
+    <key name="Progress 30">C:\ProgramData\QualiSystems\Portal\Content\Images\progress30.png</key>
+    <key name="Progress 40">C:\ProgramData\QualiSystems\Portal\Content\Images\progress40.png</key>
+    <key name="Progress 50">C:\ProgramData\QualiSystems\Portal\Content\Images\progress50.png</key>
+    <key name="Progress 60">C:\ProgramData\QualiSystems\Portal\Content\Images\progress60.png</key>
+    <key name="Progress 70">C:\ProgramData\QualiSystems\Portal\Content\Images\progress70.png</key>
+    <key name="Progress 80">C:\ProgramData\QualiSystems\Portal\Content\Images\progress80.png</key>
+    <key name="Progress 90">C:\ProgramData\QualiSystems\Portal\Content\Images\progress90.png</key>
+    <key name="Progress 100">C:\ProgramData\QualiSystems\Portal\Content\Images\progress100.png</key>
+  </ResourcesLiveStatus>
+  <ConfigurationSection name="LinkApplications">
+    <key name="Telnet" pattern="telnet://{User}:{Password}@{Address}:992" icon-key="Telnet" />
+    <key name="SSH" pattern="ssh://{User}:{Password}@{Address}:22" icon-key="SSH" />
+    <key name="RDP" pattern="http://{QsPortalAddress}/RM/ResourceApplicationLinks/GetRdpLink?resourceAddress={Address}" icon-key="RDP" />
+    <key name="AWS Remote Phone" pattern="http://{QsPortalAddress}/Content/devicefarm/aws2.html?address={Address}&amp;endpoint={AWSRemoteDeviceEndpoint}{AWSRemoteDeviceEndpoint2}" icon-key="RDP" />
+  </ConfigurationSection>
+  <ReservationLiveStatus name="ReservationLiveStatus">
+    <key name="Downloading" path="C:\ProgramData\QualiSystems\Portal\Content\Images\Downloading.png" />
+    <key name="Installing" path="C:\ProgramData\QualiSystems\Portal\Content\Images\Installing.png" />
+    <key name="Configuring" path="C:\ProgramData\QualiSystems\Portal\Content\Images\Configuring.png" />
+    <key name="Generating report" path="C:\ProgramData\QualiSystems\Portal\Content\Images\GeneratingReport.png" />
+    <key name="Completed successfully" path="C:\ProgramData\QualiSystems\Portal\Content\Images\CompletedSuccess.png" />
+    <key name="Completed unsuccessfully" path="C:\ProgramData\QualiSystems\Portal\Content\Images\CompletedUnsuccess.png" />
+    <key name="Error" path="C:\ProgramData\QualiSystems\Portal\Content\Images\ErrorGeneral.png" />
+    <key name="In Progress" path="C:\ProgramData\QualiSystems\Portal\Content\Images\InProgress.png" />
+    <key name="Progress 0" path="C:\ProgramData\QualiSystems\Portal\Content\Images\progress0.png" />
+    <key name="Progress 10" path="C:\ProgramData\QualiSystems\Portal\Content\Images\progress10.png" />
+    <key name="Progress 20" path="C:\ProgramData\QualiSystems\Portal\Content\Images\progress20.png" />
+    <key name="Progress 30" path="C:\ProgramData\QualiSystems\Portal\Content\Images\progress30.png" />
+    <key name="Progress 40" path="C:\ProgramData\QualiSystems\Portal\Content\Images\progress40.png" />
+    <key name="Progress 50" path="C:\ProgramData\QualiSystems\Portal\Content\Images\progress50.png" />
+    <key name="Progress 60" path="C:\ProgramData\QualiSystems\Portal\Content\Images\progress60.png" />
+    <key name="Progress 70" path="C:\ProgramData\QualiSystems\Portal\Content\Images\progress70.png" />
+    <key name="Progress 80" path="C:\ProgramData\QualiSystems\Portal\Content\Images\progress80.png" />
+    <key name="Progress 90" path="C:\ProgramData\QualiSystems\Portal\Content\Images\progress90.png" />
+    <key name="Progress 100" path="C:\ProgramData\QualiSystems\Portal\Content\Images\progress100.png" />
+  </ReservationLiveStatus>
+</ServerUniversalSettings>

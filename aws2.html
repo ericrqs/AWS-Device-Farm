@@ -1,0 +1,162 @@
+<html>
+<head>
+
+<script type="text/javascript">
+
+gg = {}
+
+function docommand(g1) {
+    endpoint = gg['endpoint']
+    csock = gg['csock']
+    if(!csock) {
+        csock = new WebSocket(endpoint + "&path=control")
+        gg['csock'] = csock
+
+        csock.onopen = function(event) {
+            console.log(event)
+            console.log('Control socket opened')
+            g1(csock)
+            gg['poll3'] = setInterval(function() {
+                j = gg['csock']
+                if(j) {
+                    console.log('try to send blank')
+                    j.send('{"message":"StatusMessage","parameters":{}}')
+                }
+            }, 1000)
+        }
+        csock.onclose = function(event) {
+            console.log(event)
+            console.log('Control socket closed')
+            gg['csock'] = null
+            clearInterval(gg['poll3'])
+            gg['poll3'] = null
+        }
+        csock.onerror = function(event) {
+            console.log(event)
+            console.log('Control socket error')
+            gg['csock'] = null
+        }
+        csock.onmessage = function(event) {
+            console.log('Control socket received ' + event.data)
+            document.querySelector('#status').innerHTML=event.data + '<br>Last update:' + new Date()
+        }
+    } else {
+        g1(csock)
+    }
+}
+
+function main1() {
+    document.querySelector('#phoneimage').ondragstart = function() { return false; };
+    document.querySelector('#phoneimage').onmousedown = function(e) {
+        console.log('mousedown at (' + e.x*2 + ',' + e.y*2 + ')')
+
+        gg['xdown'] = e.x
+        gg['ydown'] = e.y
+    }
+    document.querySelector('#back').onmouseup=function(e) {
+        console.log('back button')
+        docommand(function(csock) {
+            msg = '{\n"message": "KeyMessage",\n"parameters": {\n"keycode":4\n}\n}\n'
+            console.log('try to send ' + msg)
+            csock.send(msg)
+        })
+    }
+    document.querySelector('#home').onmouseup=function(e) {
+        console.log('home button')
+        docommand(function(csock) {
+            msg = '{\n"message": "KeyMessage",\n"parameters": {\n"keycode":3\n}\n}\n'
+            console.log('try to send ' + msg)
+            csock.send(msg)
+        })
+    }
+
+    document.querySelector('#phoneimage').onmouseup=function(e) {
+        console.log('mouseup at (' + e.x*2 + ',' + e.y*2 + ')')
+
+        docommand(function(csock) {
+            if(!gg['xdown'] || !gg['ydown'] || (gg['xdown'] == e.x && gg['ydown'] == e.y)) {
+                msg = '{\n"message": "TouchDownMessage",\n"parameters": {\n"x": ' + e.x*2 + ',\n"y": ' + e.y*2 + ',\n"pointer": 1,\n"pressure": 100\n}\n}\n'
+                console.log('try to send ' + msg)
+                csock.send(msg)
+
+                msg = '{\n"message": "TouchUpMessage",\n"parameters": {\n"pointer": 1\n}\n}\n'
+                console.log('try to send ' + msg)
+                csock.send(msg)
+            } else {
+                msg = '{\n"message": "TouchDownMessage",\n"parameters": {\n"x": ' + gg['xdown']*2 + ',\n"y": ' + gg['ydown']*2 + ',\n"pointer": 1,\n"pressure": 100\n}\n}\n'
+                console.log('try to send ' + msg)
+                csock.send(msg)
+
+                msg = '{\n"message": "TouchMoveMessage",\n"parameters": {\n"x": ' + e.x*2 + ',\n"y": ' + e.y*2 + ',\n"pointer": 1,\n"pressure": 100\n}\n}\n'
+                console.log('try to send ' + msg)
+                csock.send(msg)
+
+                msg = '{\n"message": "TouchUpMessage",\n"parameters": {\n"pointer": 1\n}\n}\n'
+                console.log('try to send ' + msg)
+                csock.send(msg)
+            }
+        })
+
+    }
+
+    endpoint = window.location.href.split('endpoint=')[1]
+
+    gg['endpoint'] = endpoint
+    if(!endpoint) {
+        document.querySelector('#status').innerHTML += '<br>Error: "endpoint" not specified in URL'
+        return
+    }
+
+    f1()
+}
+
+function f1() {
+    endpoint = gg['endpoint']
+
+    vsock = new WebSocket(endpoint + "&path=video")
+    gg['vsock'] = vsock
+
+    vsock.onopen = function(event) {
+        console.log(event)
+        console.log('Video socket opened')
+        gg['poll2'] = setInterval(function() {
+            vsock.send('a')
+        }, 200)
+    }
+    vsock.onclose = function(event) {
+        console.log(event)
+        console.log('Video socket closed')
+        clearInterval(gg['poll2'])
+        document.querySelector("#phoneimage").src = 'quali.jpg';
+        document.querySelector('#status').innerHTML='Session ended<br>Last update:' + new Date()
+    }
+    vsock.onerror = function(event) {
+        console.log(event)
+        console.log('Video socket error')
+    }
+    vsock.onmessage = function(event) {
+        var urlCreator = window.URL || window.webkitURL;
+        var imageUrl = urlCreator.createObjectURL(event.data);
+        document.querySelector("#phoneimage").src = imageUrl;
+        //document.querySelector('#status').innerHTML='CONNECTED to remote phone<br>Last update:' + new Date()
+        // : result=' + gg['result'] + ' status=' + gg['status'] + '
+    }
+}
+
+</script>
+<style type="text/css">
+#phoneimage { zoom: 50%; }
+</style>
+</head>
+<body onload="main1()">
+<img id="phoneimage" src="quali.jpg"/>
+<div id="status">No status</div>
+<input type="button" value="Back" id="back" />
+<input type="button" value="Home" id="home" />
+
+<!--
+<input type="button" value="Stop" id="stop" />
+<input type="button" value="Click to Start" id="test" onclick="f1()" />
+-->
+</body>
+</html>
